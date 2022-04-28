@@ -28,7 +28,7 @@ def encrypt(text, n)
   p encrypt("abcdefghi", 3)  #hgfedcbai
   
   def decrypt(encrypted_text, n)
-    length = encrypted_text.length
+    return encrypted_text if encrypted_text.nil? || encrypted_text.empty? || n <= 0
     n.times do
       evens = encrypted_text.split('').take(encrypted_text.length/2)
       odds = encrypted_text.split('').slice((encrypted_text.length/2), encrypted_text.length)
@@ -37,4 +37,4 @@ def encrypt(text, n)
     encrypted_text
   end
   
-  p decrypt("hgfedcbai", 3) #abcdefghij
+  p decrypt("hgfedcbai", 3)  #abcdefghi
